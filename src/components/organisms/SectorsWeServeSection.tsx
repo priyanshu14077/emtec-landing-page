@@ -76,7 +76,7 @@ export const SectorsWeServeSection = () => {
           <div className="flex flex-col gap-8 lg:flex-row lg:items-start">
             {/* Left: 4x3 Grid of Sector Icon Cards */}
             <div className="flex-1">
-              <div className="grid grid-cols-4 gap-4">
+              <div className="grid grid-cols-4 gap-6">
                 {displaySectors.map((sector) => {
                   const isActive = sector.id === activeSectorId;
                   return (
@@ -143,23 +143,20 @@ export const SectorsWeServeSection = () => {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -20 }}
                     transition={{ duration: 0.4, ease: "easeOut" }}
-                    className="relative overflow-hidden rounded-2xl bg-white shadow-2xl ring-1 ring-slate-200"
+                    className="relative overflow-hidden rounded-2xl bg-white shadow-2xl ring-1 ring-slate-200 h-full"
                   >
-                    {/* Header Image Section */}
-                    <div className="relative h-[280px] w-full overflow-hidden">
+                    <div className="relative h-full w-full min-h-[460px]">
                       <Image
                         src={activeSector.image_url}
                         alt={activeSector.title}
                         fill
                         priority={false}
-                        className="object-cover"
+                        className="object-contain"
                         sizes="480px"
                       />
-                      {/* Dark gradient overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/50 to-transparent" />
 
-                      {/* Navigation Buttons */}
-                      <div className="absolute inset-x-0 top-0 flex items-center justify-between px-5 py-4">
+                      {/* Navigation Buttons Overlay */}
+                      <div className="absolute inset-x-0 top-0 flex items-center justify-between px-5 py-4 z-10">
                         <button
                           type="button"
                           onClick={handlePrev}
@@ -182,48 +179,6 @@ export const SectorsWeServeSection = () => {
                           <span>→</span>
                         </button>
                       </div>
-
-                      {/* Title at bottom of image */}
-                      <div className="absolute inset-x-0 bottom-0 px-6 py-5">
-                        <h3 className="text-2xl font-bold uppercase tracking-wider text-white">
-                          {activeSector.title}
-                        </h3>
-                        <p className="mt-1 text-sm text-white/80">
-                          {activeSector.projects_count} Projects Delivered
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Project List Section */}
-                    <div className="max-h-[320px] space-y-4 overflow-y-auto bg-white px-6 py-5">
-                      <p className="text-xs font-bold uppercase tracking-[0.15em] text-blue-700">
-                        Key Projects
-                      </p>
-                      {activeSector.project_list.length > 0 ? (
-                        <ul className="space-y-3 text-sm text-slate-700">
-                          {activeSector.project_list
-                            .slice(0, 15)
-                            .map((project, idx) => (
-                              <li
-                                key={`${activeSector.id}-${idx}`}
-                                className="flex items-start gap-2"
-                              >
-                                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-600" />
-                                <span>{project}</span>
-                              </li>
-                            ))}
-                          {activeSector.project_list.length > 15 && (
-                            <li className="text-xs font-medium text-blue-700">
-                              +{activeSector.project_list.length - 15} more
-                              projects
-                            </li>
-                          )}
-                        </ul>
-                      ) : (
-                        <p className="text-sm italic text-slate-500">
-                          Project details coming soon...
-                        </p>
-                      )}
                     </div>
                   </motion.div>
                 </AnimatePresence>

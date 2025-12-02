@@ -1,36 +1,112 @@
+import Image from "next/image";
+import Link from "next/link";
+
 export const FooterSection = () => {
   return (
-    <footer className="border-t border-slate-800 bg-[radial-gradient(circle_at_top,_#283754,_#192233)] py-10 text-slate-200">
-      <div className="mx-auto max-w-6xl px-6 space-y-8 text-sm">
-        <div className="grid gap-8 md:grid-cols-4">
+    <footer className="bg-[#1e293b] py-12 text-slate-200">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="grid gap-12 md:grid-cols-4">
+          {/* Logo Column */}
+          <div className="space-y-4">
+            <div className="relative h-10 w-32">
+              <Image
+                src="/assets/logo-strip.png"
+                alt="Emtech"
+                fill
+                className="object-contain object-left brightness-0 invert"
+                sizes="128px"
+              />
+            </div>
+          </div>
+
+          {/* Company Column */}
           <div className="space-y-3">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-300">
-              EMTEC Solutions
-            </p>
-            <p className="text-xs text-slate-300">
-              2025 EMTEC Solutions, All rights reserved.
-            </p>
+            <h3 className="text-sm font-semibold text-white">Company</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link
+                  href="#about"
+                  className="text-slate-300 hover:text-white transition-colors"
+                >
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#careers"
+                  className="text-slate-300 hover:text-white transition-colors"
+                >
+                  Careers
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#ehs"
+                  className="text-slate-300 hover:text-white transition-colors"
+                >
+                  EHS & Quality
+                </Link>
+              </li>
+            </ul>
           </div>
-          {/* link columns to be filled from footer component set */}
-          <div className="space-y-2">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">
-              Company
-            </p>
+
+          {/* Work Column */}
+          <div className="space-y-3">
+            <h3 className="text-sm font-semibold text-white">Work</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link
+                  href="#sectors"
+                  className="text-slate-300 hover:text-white transition-colors"
+                >
+                  Sectors
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#projects"
+                  className="text-slate-300 hover:text-white transition-colors"
+                >
+                  Projects
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#case-studies"
+                  className="text-slate-300 hover:text-white transition-colors"
+                >
+                  Case Studies
+                </Link>
+              </li>
+            </ul>
           </div>
-          <div className="space-y-2">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">
-              Solutions
-            </p>
-          </div>
-          <div className="space-y-2">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">
-              Resources
-            </p>
+
+          {/* Contact Column */}
+          <div className="space-y-3">
+            <h3 className="text-sm font-semibold text-white">Company</h3>
+            <ul className="space-y-2 text-sm text-slate-300">
+              <li>
+                <a
+                  href="mailto:sales@emtecsolutions.in"
+                  className="hover:text-white transition-colors"
+                >
+                  sales@emtecsolutions.in
+                </a>
+              </li>
+              <li>+91 9098876741 / +91 70426 76296</li>
+              <li className="pt-2">
+                Corporate: Unit 503, D Wing, The Atrium, Janhangir Nagar, BG
+                Shitree Road, Pune - 411036
+              </li>
+            </ul>
           </div>
         </div>
-        <div className="border-t border-slate-800 pt-4 text-xs text-slate-500">
-          {/* legal links to be attached */}
-          <span>Privacy Policy · Terms of Use</span>
+
+        {/* Copyright */}
+        <div className="mt-12 border-t border-slate-700 pt-6 text-center">
+          <p className="text-sm text-slate-400">
+            2025 EMTEC Solutions. All rights reserved
+          </p>
         </div>
       </div>
     </footer>
