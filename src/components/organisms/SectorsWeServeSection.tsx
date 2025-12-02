@@ -2,7 +2,6 @@
 
 import { useMemo, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { sectors } from "@/src/data/sectors";
 
@@ -49,7 +48,7 @@ export const SectorsWeServeSection = () => {
     setActiveSectorId(nextSector.id);
   };
 
-  // Ensure we only show 12 sectors
+  // Display first 12 sectors in 4x3 grid
   const displaySectors = sectors.slice(0, 12);
 
   return (
@@ -58,45 +57,26 @@ export const SectorsWeServeSection = () => {
       className="relative overflow-hidden bg-white py-24 text-slate-900"
       aria-labelledby="sectors-heading"
     >
-      <div className="relative mx-auto max-w-[1330px] px-6">
+      <div className="relative mx-auto max-w-7xl px-6">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          className="space-y-8"
+          className="space-y-12"
         >
-          {/* Header with CTA */}
-          <div className="flex items-start justify-between">
-            <div>
-              <p
-                id="sectors-heading"
-                className="font-poppins text-sm font-extrabold uppercase tracking-[0.2em] text-blue-700"
-              >
-                Sectors we serve
-              </p>
-              <p className="mt-4 max-w-md text-3xl font-semibold text-slate-900">
-                Integrated engineering across India&apos;s critical
-                infrastructure.
-              </p>
-            </div>
-            <Link
-              href="#contact"
-              className="hidden text-sm font-medium text-blue-700 transition-colors hover:text-blue-600 md:flex md:items-center md:gap-2"
-            >
-              Need a similar project? Talk to us{" "}
-              <span className="text-lg">→</span>
-            </Link>
+          {/* Header */}
+          <div className="text-center">
+            <h1 className="font-poppins text-5xl font-bold text-black">
+              Sectors We Serve
+            </h1>
           </div>
 
-          {/* Side-by-side layout: Grid (3x4) and Card */}
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
-            {/* Left: 3x4 Grid of Sector Cards - Each 142x142px */}
-            <div className="shrink-0">
-              <div
-                className="grid grid-cols-3 gap-4"
-                style={{ width: "426px" }}
-              >
+          {/* Main Content: Grid + Detail Card */}
+          <div className="flex flex-col gap-8 lg:flex-row lg:items-start">
+            {/* Left: 4x3 Grid of Sector Icon Cards */}
+            <div className="flex-1">
+              <div className="grid grid-cols-4 gap-4">
                 {displaySectors.map((sector) => {
                   const isActive = sector.id === activeSectorId;
                   return (
@@ -104,12 +84,12 @@ export const SectorsWeServeSection = () => {
                       key={sector.id}
                       type="button"
                       onClick={() => setActiveSectorId(sector.id)}
-                      className={`group relative flex flex-col items-center justify-center rounded-xl border text-center transition-all ${
+                      className={`group relative flex flex-col items-center justify-center rounded-xl border p-4 text-center transition-all duration-300 ${
                         isActive
                           ? "border-blue-600 bg-[#30405E] shadow-lg ring-2 ring-blue-500/50"
                           : "border-slate-200 bg-slate-50 hover:border-blue-400 hover:bg-slate-100"
                       }`}
-                      style={{ width: "142px", height: "142px" }}
+                      style={{ height: "142px" }}
                     >
                       {/* Icon Circle */}
                       <div
@@ -117,7 +97,6 @@ export const SectorsWeServeSection = () => {
                           isActive ? "bg-white/20" : "bg-slate-200"
                         }`}
                       >
-                        {/* Icon placeholder - Place icons at: public/assets/icons/${sector.icon_path}.svg */}
                         <div className="relative h-6 w-6">
                           <Image
                             src={`/assets/icons/${sector.icon_path}.svg`}
@@ -133,7 +112,7 @@ export const SectorsWeServeSection = () => {
 
                       {/* Title */}
                       <h3
-                        className={`mb-1 text-xs-plus font-semibold uppercase tracking-wide ${
+                        className={`mb-1 text-xs font-semibold uppercase tracking-wide ${
                           isActive ? "text-white" : "text-slate-800"
                         }`}
                       >
@@ -142,7 +121,7 @@ export const SectorsWeServeSection = () => {
 
                       {/* Project Count */}
                       <p
-                        className={`text-xxs ${
+                        className={`text-[10px] ${
                           isActive ? "text-white/90" : "text-slate-600"
                         }`}
                       >
@@ -154,98 +133,101 @@ export const SectorsWeServeSection = () => {
               </div>
             </div>
 
-            {/* Right: Dynamic Project Card - 685x486px */}
-            <div className="flex-1">
-              <motion.div
-                className="relative overflow-hidden rounded-2xl bg-white shadow-2xl ring-1 ring-slate-200"
-                style={{ width: "685px", height: "486px" }}
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.2 }}
-              >
-                {activeSector && (
-                  <AnimatePresence mode="wait">
-                    <motion.div
-                      key={activeSector.id}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -20 }}
-                      transition={{ duration: 0.35, ease: "easeOut" }}
-                      className="relative flex h-full flex-col"
-                    >
-                      {/* Background Image */}
-                      <div className="relative h-[320px] w-full overflow-hidden">
-                        {/* Dynamic sector image - Place images at: public/assets/images/sectors/{sector-id}.jpg */}
-                        <Image
-                          src={activeSector.image_url}
-                          alt={activeSector.title}
-                          fill
-                          priority={false}
-                          className="object-cover"
-                          sizes="685px"
-                        />
-                        {/* Dark gradient overlay for text readability */}
-                        <div className="absolute inset-0 .bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent" />
+            {/* Right: Dynamic Project Detail Card */}
+            <div className="flex-shrink-0 lg:w-[480px]">
+              {activeSector && (
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={activeSector.id}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    transition={{ duration: 0.4, ease: "easeOut" }}
+                    className="relative overflow-hidden rounded-2xl bg-white shadow-2xl ring-1 ring-slate-200"
+                  >
+                    {/* Header Image Section */}
+                    <div className="relative h-[280px] w-full overflow-hidden">
+                      <Image
+                        src={activeSector.image_url}
+                        alt={activeSector.title}
+                        fill
+                        priority={false}
+                        className="object-cover"
+                        sizes="480px"
+                      />
+                      {/* Dark gradient overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/50 to-transparent" />
 
-                        {/* Navigation and Title Overlay */}
-                        <div className="absolute inset-x-0 top-0 flex items-center justify-between px-6 py-5">
-                          <button
-                            type="button"
-                            onClick={handlePrev}
-                            className="flex items-center gap-2 rounded-full bg-black/30 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm transition-colors hover:bg-black/50"
-                          >
-                            <span className="text-lg">←</span>
-                            <span className="text-sm-minus uppercase tracking-wide">
-                              {prevSector?.title ?? "Previous"}
-                            </span>
-                          </button>
-
-                          <span className="text-lg font-bold uppercase tracking-wider text-white">
-                            {activeSector.title}
+                      {/* Navigation Buttons */}
+                      <div className="absolute inset-x-0 top-0 flex items-center justify-between px-5 py-4">
+                        <button
+                          type="button"
+                          onClick={handlePrev}
+                          className="flex items-center gap-2 rounded-full bg-black/40 px-3 py-1.5 text-sm font-medium text-white backdrop-blur-sm transition-all hover:bg-black/60"
+                        >
+                          <span>←</span>
+                          <span className="text-xs uppercase tracking-wide">
+                            {prevSector?.title ?? "Prev"}
                           </span>
+                        </button>
 
-                          <button
-                            type="button"
-                            onClick={handleNext}
-                            className="flex items-center gap-2 rounded-full bg-black/30 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm transition-colors hover:bg-black/50"
-                          >
-                            <span className="text-sm-minus uppercase tracking-wide">
-                              {nextSector?.title ?? "Next"}
-                            </span>
-                            <span className="text-lg">→</span>
-                          </button>
-                        </div>
+                        <button
+                          type="button"
+                          onClick={handleNext}
+                          className="flex items-center gap-2 rounded-full bg-black/40 px-3 py-1.5 text-sm font-medium text-white backdrop-blur-sm transition-all hover:bg-black/60"
+                        >
+                          <span className="text-xs uppercase tracking-wide">
+                            {nextSector?.title ?? "Next"}
+                          </span>
+                          <span>→</span>
+                        </button>
                       </div>
 
-                      {/* Project List */}
-                      <div className="flex-1 space-y-3 overflow-y-auto bg-white px-6 pb-6 pt-5">
-                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-700">
-                          Key Projects
+                      {/* Title at bottom of image */}
+                      <div className="absolute inset-x-0 bottom-0 px-6 py-5">
+                        <h3 className="text-2xl font-bold uppercase tracking-wider text-white">
+                          {activeSector.title}
+                        </h3>
+                        <p className="mt-1 text-sm text-white/80">
+                          {activeSector.projects_count} Projects Delivered
                         </p>
-                        <ul className="grid gap-x-8 gap-y-12 text-sm-plus sm:grid-cols-2 lg:grid-cols-3">
+                      </div>
+                    </div>
+
+                    {/* Project List Section */}
+                    <div className="max-h-[320px] space-y-4 overflow-y-auto bg-white px-6 py-5">
+                      <p className="text-xs font-bold uppercase tracking-[0.15em] text-blue-700">
+                        Key Projects
+                      </p>
+                      {activeSector.project_list.length > 0 ? (
+                        <ul className="space-y-3 text-sm text-slate-700">
                           {activeSector.project_list
-                            .slice(0, 12)
+                            .slice(0, 15)
                             .map((project, idx) => (
                               <li
                                 key={`${activeSector.id}-${idx}`}
-                                className="flex items-start gap-2 text-slate-700"
+                                className="flex items-start gap-2"
                               >
                                 <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-600" />
                                 <span>{project}</span>
                               </li>
                             ))}
-                          {activeSector.project_list.length > 12 && (
-                            <li className="col-span-2 text-xs font-medium text-blue-700">
-                              +{activeSector.project_list.length - 12} more
+                          {activeSector.project_list.length > 15 && (
+                            <li className="text-xs font-medium text-blue-700">
+                              +{activeSector.project_list.length - 15} more
+                              projects
                             </li>
                           )}
                         </ul>
-                      </div>
-                    </motion.div>
-                  </AnimatePresence>
-                )}
-              </motion.div>
+                      ) : (
+                        <p className="text-sm italic text-slate-500">
+                          Project details coming soon...
+                        </p>
+                      )}
+                    </div>
+                  </motion.div>
+                </AnimatePresence>
+              )}
             </div>
           </div>
         </motion.div>

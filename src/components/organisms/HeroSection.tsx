@@ -40,7 +40,7 @@ export const HeroSection = () => {
           initial="hidden"
           animate="visible"
         >
-          <p className="font-poppins text-4xl font-bold uppercase tracking-[0.3em] text-blue-700">
+          <p className="font-poppins text-4xl font-bold uppercase tracking-[0.3em] text-black-700 lg:text-5xl">
             Integrated Solutions
           </p>
           <h1 className="text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
@@ -54,7 +54,7 @@ export const HeroSection = () => {
 
           <div className="flex flex-wrap items-center gap-4">
             <Button variant="primary">Your Work</Button>
-            <Button variant="secondary">Get a proposal</Button>
+            <Button variant="secondary">Get a Proposal</Button>
           </div>
         </motion.div>
 
@@ -78,6 +78,41 @@ export const HeroSection = () => {
             </div>
           </div>
         </motion.div>
+      </div>
+
+      {/* Stats Cards Section - Positioned over background */}
+      <div className="relative mx-auto mt-16 max-w-6xl px-6">
+        <div className="grid gap-6 md:grid-cols-3">
+          {/* Card 1 */}
+          <div className="flex flex-col items-center justify-center rounded-2xl bg-white/95 p-8 text-center shadow-lg backdrop-blur-sm ring-1 ring-slate-200/50">
+            <p className="font-poppins text-4xl font-bold text-slate-900">
+              72+
+            </p>
+            <p className="mt-2 text-sm font-bold text-slate-900">
+              Projects Delivered
+            </p>
+          </div>
+
+          {/* Card 2 */}
+          <div className="flex flex-col items-center justify-center rounded-2xl bg-white/95 p-8 text-center shadow-lg backdrop-blur-sm ring-1 ring-slate-200/50">
+            <p className="font-poppins text-4xl font-bold text-slate-900">
+              2,000,000
+            </p>
+            <p className="mt-2 text-sm font-bold text-slate-900">
+              Safe Man - hours
+            </p>
+          </div>
+
+          {/* Card 3 */}
+          <div className="flex flex-col items-center justify-center rounded-2xl bg-white/95 p-8 text-center shadow-lg backdrop-blur-sm ring-1 ring-slate-200/50">
+            <p className="font-poppins text-4xl font-bold text-slate-900">
+              18+
+            </p>
+            <p className="mt-2 text-sm font-bold text-slate-900">
+              Cities Covered
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );
