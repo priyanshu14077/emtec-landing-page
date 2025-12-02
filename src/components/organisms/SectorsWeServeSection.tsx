@@ -90,7 +90,7 @@ export const SectorsWeServeSection = () => {
           </div>
 
           {/* Side-by-side layout: Grid (3x4) and Card */}
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-start">
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
             {/* Left: 3x4 Grid of Sector Cards - Each 142x142px */}
             <div className="shrink-0">
               <div
@@ -133,7 +133,7 @@ export const SectorsWeServeSection = () => {
 
                       {/* Title */}
                       <h3
-                        className={`mb-1 text-[10px] font-semibold uppercase tracking-wide ${
+                        className={`mb-1 text-xs-plus font-semibold uppercase tracking-wide ${
                           isActive ? "text-white" : "text-slate-800"
                         }`}
                       >
@@ -142,7 +142,7 @@ export const SectorsWeServeSection = () => {
 
                       {/* Project Count */}
                       <p
-                        className={`text-[9px] ${
+                        className={`text-xxs ${
                           isActive ? "text-white/90" : "text-slate-600"
                         }`}
                       >
@@ -196,7 +196,7 @@ export const SectorsWeServeSection = () => {
                             className="flex items-center gap-2 rounded-full bg-black/30 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm transition-colors hover:bg-black/50"
                           >
                             <span className="text-lg">←</span>
-                            <span className="text-[11px] uppercase tracking-wide">
+                            <span className="text-sm-minus uppercase tracking-wide">
                               {prevSector?.title ?? "Previous"}
                             </span>
                           </button>
@@ -210,7 +210,7 @@ export const SectorsWeServeSection = () => {
                             onClick={handleNext}
                             className="flex items-center gap-2 rounded-full bg-black/30 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm transition-colors hover:bg-black/50"
                           >
-                            <span className="text-[11px] uppercase tracking-wide">
+                            <span className="text-sm-minus uppercase tracking-wide">
                               {nextSector?.title ?? "Next"}
                             </span>
                             <span className="text-lg">→</span>
@@ -223,7 +223,7 @@ export const SectorsWeServeSection = () => {
                         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-700">
                           Key Projects
                         </p>
-                        <div className="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+                        <ul className="grid gap-x-8 gap-y-12 text-sm-plus sm:grid-cols-2 lg:grid-cols-3">
                           {activeSector.project_list
                             .slice(0, 12)
                             .map((project, idx) => (

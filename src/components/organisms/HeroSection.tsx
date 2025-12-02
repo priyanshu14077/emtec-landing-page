@@ -40,7 +40,7 @@ export const HeroSection = () => {
           initial="hidden"
           animate="visible"
         >
-          <p className="font-poppins text-xs font-bold uppercase tracking-[0.3em] text-blue-700">
+          <p className="font-poppins text-4xl font-bold uppercase tracking-[0.3em] text-blue-700">
             Integrated Solutions
           </p>
           <h1 className="text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">

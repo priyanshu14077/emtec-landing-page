@@ -13,7 +13,7 @@ export const CareerSection = () => {
             <div className="max-w-xl space-y-4">
               <h2
                 id="career-heading"
-                className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-300"
+                className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-700"
               >
                 Build your career with us
               </h2>

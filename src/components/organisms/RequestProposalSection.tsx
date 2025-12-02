@@ -46,7 +46,7 @@ export const RequestProposalSection = () => {
         <div className="flex-1 space-y-5">
           <h2
             id="proposal-heading"
-            className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-400"
+            className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-700"
           >
             Let&apos;s talk
           </h2>

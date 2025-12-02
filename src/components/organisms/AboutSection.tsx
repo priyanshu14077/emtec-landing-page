@@ -63,7 +63,7 @@ export const AboutSection = () => {
                 </p>
               </li>
               <li>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-blue-600">
+                <p className="text-sm-minus font-semibold uppercase tracking-[0.2em] text-blue-600">
                   2022
                 </p>
                 <p className="mt-1">
@@ -71,7 +71,7 @@ export const AboutSection = () => {
                 </p>
               </li>
               <li>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-blue-600">
+                <p className="text-sm-minus font-semibold uppercase tracking-[0.2em] text-blue-600">
                   2025
                 </p>
                 <p className="mt-1">
