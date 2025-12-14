@@ -145,39 +145,49 @@ export const SectorsWeServeSection = () => {
                     transition={{ duration: 0.4, ease: "easeOut" }}
                     className="relative overflow-hidden rounded-2xl bg-white shadow-2xl ring-1 ring-slate-200 h-full"
                   >
-                    <div className="relative h-full w-full min-h-[460px]">
+                    {/* Image container (relative) */}
+                    <div className="relative w-full h-[360px] lg:h-[360px]">
+                      {/* Base Image - fills and hugs container */}
                       <Image
                         src={activeSector.image_url}
                         alt={activeSector.title}
                         fill
                         priority={false}
-                        className="object-contain"
+                        className="object-cover object-center"
                         sizes="480px"
                       />
 
-                      {/* Navigation Buttons Overlay */}
-                      <div className="absolute inset-x-0 top-0 flex items-center justify-between px-5 py-4 z-10">
-                        <button
-                          type="button"
-                          onClick={handlePrev}
-                          className="flex items-center gap-2 rounded-full bg-black/40 px-3 py-1.5 text-sm font-medium text-white backdrop-blur-sm transition-all hover:bg-black/60"
-                        >
-                          <span>←</span>
-                          <span className="text-xs uppercase tracking-wide">
-                            {prevSector?.title ?? "Prev"}
-                          </span>
-                        </button>
+                      {/* Overlay wrapper (absolute, full size) */}
+                      <div className="absolute inset-0 z-10">
+                        {/* Top controls (pointer events enabled) */}
+                        <div className="pointer-events-auto absolute inset-x-0 top-0 flex items-center justify-between px-5 py-4">
+                          <button
+                            type="button"
+                            onClick={handlePrev}
+                            className="flex items-center gap-2 rounded-full bg-black/40 px-3 py-1.5 text-sm font-medium text-white backdrop-blur-sm transition-all hover:bg-black/60"
+                          >
+                            <span>←</span>
+                            <span className="text-xs uppercase tracking-wide">
+                              {prevSector?.title ?? "Prev"}
+                            </span>
+                          </button>
 
-                        <button
-                          type="button"
-                          onClick={handleNext}
-                          className="flex items-center gap-2 rounded-full bg-black/40 px-3 py-1.5 text-sm font-medium text-white backdrop-blur-sm transition-all hover:bg-black/60"
-                        >
-                          <span className="text-xs uppercase tracking-wide">
-                            {nextSector?.title ?? "Next"}
-                          </span>
-                          <span>→</span>
-                        </button>
+                          <button
+                            type="button"
+                            onClick={handleNext}
+                            className="flex items-center gap-2 rounded-full bg-black/40 px-3 py-1.5 text-sm font-medium text-white backdrop-blur-sm transition-all hover:bg-black/60"
+                          >
+                            <span className="text-xs uppercase tracking-wide">
+                              {nextSector?.title ?? "Next"}
+                            </span>
+                            <span>→</span>
+                          </button>
+                        </div>
+
+                        {/* Content grid (flex, centered) */}
+                        <div className="pointer-events-none flex h-full w-full items-center justify-center px-6">
+                          {/* Reserve for overlaid content if needed; remains centered */}
+                        </div>
                       </div>
                     </div>
                   </motion.div>

@@ -22,6 +22,11 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "EMTEC Solutions",
   description: "EMTEC Solutions",
+  icons: {
+    icon: "/assets/logo-strip.png",
+    shortcut: "/assets/logo-strip.png",
+    apple: "/assets/logo-strip.png",
+  },
 };
 
 export default function RootLayout({

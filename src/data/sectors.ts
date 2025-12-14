@@ -57,19 +57,6 @@ export const sectors: ISector[] = [
     ],
   },
   {
-    id: "solar",
-    title: "SOLAR",
-    projects_count: 19,
-    icon_path: "icon-solar-panel",
-    image_url: "/assets/images/sectors/solar.jpg", // path: public/assets/images/solar.jpg
-    project_list: [
-      "Solar Park - E&M Works",
-      "Solar Power Park, Vapi - E&M Works",
-      "Solar Power Park, Dholera - E&M Works",
-      "Solar Power Park, Mundra - E&M Works",
-    ],
-  },
-  {
     id: "industrials",
     title: "INDUSTRIAL",
     projects_count: 19,
@@ -92,6 +79,7 @@ export const sectors: ISector[] = [
       "Dabhoi - E&M Works",
     ],
   },
+  
   {
     id: "airport",
     title: "AIRPORT",
