@@ -14,7 +14,7 @@ export const sectors: ISector[] = [
     title: "METRO",
     projects_count: 19,
     icon_path: "icon-metro-train",
-    image_url: "/assets/images/sectors/metro.jpg", // Place image at: public/assets/images/sectors/metro.jpg
+    image_url: "/assets/images/sectors/metro.png", // Place image at: public/assets/images/sectors/metro.jpg
     project_list: [
       "Bund Garden - E&M Works",
       "Ramwadi - E&M Works",
@@ -38,7 +38,7 @@ export const sectors: ISector[] = [
     title: "SOLAR",
     projects_count: 19,
     icon_path: "icon-solar-panel",
-    image_url: "/assets/images/sectors/solar.jpg", // Place image at: public/assets/images/sectors/solar.jpg
+    image_url: "/assets/images/sectors/solar.png", // Place image at: public/assets/images/sectors/solar.jpg
     project_list: [
       "Solar Park - E&M Works",
       "Solar Power Park, Vapi - E&M Works",
@@ -51,7 +51,7 @@ export const sectors: ISector[] = [
     title: "DATA CENTRE",
     projects_count: 19,
     icon_path: "icon-data-centre",
-    image_url: "/assets/images/sectors/data-centre.jpg", // Place image at: public/assets/images/sectors/data-centre.jpg
+    image_url: "/assets/images/sectors/data-center.png", // Place image at: public/assets/images/sectors/data-centre.jpg
     project_list: [
       // Placeholder - to be attached
     ],
@@ -61,7 +61,7 @@ export const sectors: ISector[] = [
     title: "INDUSTRIAL",
     projects_count: 19,
     icon_path: "icon-factory",
-    image_url: "/assets/images/sectors/industrial.jpg", // Place image at: public/assets/images/sectors/industrial.jpg
+    image_url: "/assets/images/sectors/industrial.png", // Place image at: public/assets/images/sectors/industrial.jpg
     project_list: [
       "Amul Dairy, Kadi E&M Works",
       "Kandla - Bulk Terminal",
@@ -85,7 +85,7 @@ export const sectors: ISector[] = [
     title: "AIRPORT",
     projects_count: 19,
     icon_path: "icon-airplane",
-    image_url: "/assets/images/sectors/airport.jpg", // Place image at: public/assets/images/sectors/airport.jpg
+    image_url: "/assets/images/sectors/airport.png", // Place image at: public/assets/images/sectors/airport.jpg
     project_list: [
       "Ahmedabad Airport - E&M Works",
       "Vadodara Airport - E&M Works",
@@ -115,7 +115,7 @@ export const sectors: ISector[] = [
     title: "RESIDENTIAL",
     projects_count: 19,
     icon_path: "icon-house",
-    image_url: "/assets/images/sectors/residential.jpg", // Place image at: public/assets/images/sectors/residential.jpg
+    image_url: "/assets/images/sectors/residential.png", // Place image at: public/assets/images/sectors/residential.jpg
     project_list: [
       "Adani Shantigram, Ahmedabad - E&M Works",
       "Shapoorji Pallonji, Mumbai - E&M Works",
@@ -130,7 +130,7 @@ export const sectors: ISector[] = [
     title: "T&D",
     projects_count: 19,
     icon_path: "icon-pylon",
-    image_url: "/assets/images/sectors/td.jpg", // Place image at: public/assets/images/sectors/td.jpg
+    image_url: "/assets/images/sectors/t&d.jpg", // Place image at: public/assets/images/sectors/td.jpg
     project_list: [
       "GETCO, Mehsana - E&M Works",
       "PGCIL, Nagpur - E&M Works",
@@ -161,7 +161,7 @@ export const sectors: ISector[] = [
     title: "HOTEL & RESORT",
     projects_count: 19,
     icon_path: "icon-hotel",
-    image_url: "/assets/images/sectors/hotel-resort.jpg", // Place image at: public/assets/images/sectors/hotel-resort.jpg
+    image_url: "/assets/images/sectors/hotel&resort.jpg", // Place image at: public/assets/images/sectors/hotel-resort.jpg
     project_list: [
       // Placeholder - to be attached
     ],
