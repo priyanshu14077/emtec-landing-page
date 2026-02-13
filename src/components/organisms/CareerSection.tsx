@@ -1,4 +1,5 @@
 import { Button } from "@/src/components/atoms/Button";
+import Link from "next/link";
 
 export const CareerSection = () => {
   return (
@@ -21,8 +22,12 @@ export const CareerSection = () => {
 
             {/* Three Buttons */}
             <div className="flex flex-wrap gap-3 pt-4">
-              <Button variant="primary">View Open Roles</Button>
-              <Button variant="secondary">Graduate Programs</Button>
+              <Link href="/careers/roles">
+                <Button variant="primary">View Open Roles</Button>
+              </Link>
+              <Link href="/careers/graduate">
+                <Button variant="secondary">Graduate Programs</Button>
+              </Link>
               <Button variant="ghost">Life at Emtec</Button>
             </div>
           </div>

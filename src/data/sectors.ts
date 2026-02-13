@@ -12,7 +12,7 @@ export const sectors: ISector[] = [
   {
     id: "metro",
     title: "METRO",
-    projects_count: 19,
+    projects_count: 16,
     icon_path: "icon-metro-train",
     image_url: "/assets/images/sectors/metro.png", // Place image at: public/assets/images/sectors/metro.jpg
     project_list: [
@@ -36,7 +36,7 @@ export const sectors: ISector[] = [
   {
     id: "solar",
     title: "SOLAR",
-    projects_count: 19,
+    projects_count: 4,
     icon_path: "icon-solar-panel",
     image_url: "/assets/images/sectors/solar.png", // Place image at: public/assets/images/sectors/solar.jpg
     project_list: [
@@ -49,7 +49,7 @@ export const sectors: ISector[] = [
   {
     id: "data-centre",
     title: "DATA CENTRE",
-    projects_count: 19,
+    projects_count: 6,
     icon_path: "icon-data-centre",
     image_url: "/assets/images/sectors/data-center.png", // Place image at: public/assets/images/sectors/data-centre.jpg
     project_list: [
@@ -59,7 +59,7 @@ export const sectors: ISector[] = [
   {
     id: "industrials",
     title: "INDUSTRIAL",
-    projects_count: 19,
+    projects_count: 16,
     icon_path: "icon-factory",
     image_url: "/assets/images/sectors/industrial.png", // Place image at: public/assets/images/sectors/industrial.jpg
     project_list: [
@@ -83,7 +83,7 @@ export const sectors: ISector[] = [
   {
     id: "airport",
     title: "AIRPORT",
-    projects_count: 19,
+    projects_count: 2,
     icon_path: "icon-airplane",
     image_url: "/assets/images/sectors/airport.png", // Place image at: public/assets/images/sectors/airport.jpg
     project_list: [
@@ -94,7 +94,7 @@ export const sectors: ISector[] = [
   {
     id: "commercials",
     title: "COMMERCIAL",
-    projects_count: 19,
+    projects_count: 10,
     icon_path: "icon-office-building",
     image_url: "/assets/images/sectors/commercial.jpg", // Place image at: public/assets/images/sectors/commercial.jpg
     project_list: [
@@ -113,7 +113,7 @@ export const sectors: ISector[] = [
   {
     id: "residential",
     title: "RESIDENTIAL",
-    projects_count: 19,
+    projects_count: 6,
     icon_path: "icon-house",
     image_url: "/assets/images/sectors/residential.png", // Place image at: public/assets/images/sectors/residential.jpg
     project_list: [
@@ -128,7 +128,7 @@ export const sectors: ISector[] = [
   {
     id: "t&d",
     title: "T&D",
-    projects_count: 19,
+    projects_count: 7,
     icon_path: "icon-pylon",
     image_url: "/assets/images/sectors/t&d.jpg", // Place image at: public/assets/images/sectors/td.jpg
     project_list: [
@@ -149,7 +149,7 @@ export const sectors: ISector[] = [
   {
     id: "institute",
     title: "INSTITUTE",
-    projects_count: 19,
+    projects_count: 2,
     icon_path: "icon-institute",
     image_url: "/assets/images/sectors/institute.jpg", // Place image at: public/assets/images/sectors/institute.jpg
     project_list: [
@@ -159,7 +159,7 @@ export const sectors: ISector[] = [
   {
     id: "hotel-resort",
     title: "HOTEL & RESORT",
-    projects_count: 19,
+    projects_count: 2,
     icon_path: "icon-hotel",
     image_url: "/assets/images/sectors/hotel&resort.jpg", // Place image at: public/assets/images/sectors/hotel-resort.jpg
     project_list: [
@@ -169,7 +169,7 @@ export const sectors: ISector[] = [
   {
     id: "hospitals",
     title: "HOSPITAL",
-    projects_count: 19,
+    projects_count: 5,
     icon_path: "icon-hospital",
     image_url: "/assets/images/sectors/hospital.jpg", // Place image at: public/assets/images/sectors/hospital.jpg
     project_list: [
@@ -185,7 +185,7 @@ export const sectors: ISector[] = [
   {
     id: "mall",
     title: "MALL",
-    projects_count: 19,
+    projects_count: 7,
     icon_path: "icon-mall",
     image_url: "/assets/images/sectors/mall.jpg", // Place image at: public/assets/images/sectors/mall.jpg
     project_list: [
