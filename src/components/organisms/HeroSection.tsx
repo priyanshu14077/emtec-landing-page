@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Button } from "@/src/components/atoms/Button";
+import Link from "next/link";
 
 import type { Variants } from "framer-motion";
 
@@ -28,7 +29,7 @@ export const HeroSection = () => {
           alt=""
           fill
           priority
-          className="object-cover opacity-80"
+          className="object-cover"
         />
         <div className="absolute inset-0 .bg-gradient-to-b from-white/70 via-white/80 to-white" />
       </div>
@@ -53,8 +54,12 @@ export const HeroSection = () => {
           </p>
 
           <div className="flex flex-wrap items-center gap-4">
-            <Button variant="primary">Your Work</Button>
-            <Button variant="secondary">Get a Proposal</Button>
+            <Link href="#sectors">
+              <Button variant="primary">Your Work</Button>
+            </Link>
+            <Link href="/proposal">
+              <Button variant="secondary">Get a Proposal</Button>
+            </Link>
           </div>
         </motion.div>
 

@@ -1,43 +1,8 @@
 "use client";
 
-import { useState } from "react";
-import { Button } from "@/src/components/atoms/Button";
-
-interface IFormState {
-  name: string;
-  company: string;
-  email: string;
-  phone: string;
-  projectType: string;
-  message: string;
-}
+import { ProposalForm } from "@/src/components/organisms/ProposalForm";
 
 export const RequestProposalSection = () => {
-  const [formState, setFormState] = useState<IFormState>({
-    name: "",
-    company: "",
-    email: "",
-    phone: "",
-    projectType: "",
-    message: "",
-  });
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleChange = (
-    event: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
-  ) => {
-    const { name, value } = event.target;
-    setFormState((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-    // server-side validation and submission to be added via server actions / API
-    setSubmitted(true);
-  };
-
   return (
     <section
       id="contact"
@@ -131,112 +96,7 @@ export const RequestProposalSection = () => {
         </div>
 
         <div className="flex-1">
-          <div className="rounded-2xl bg-slate-50 p-8 shadow-lg">
-            <form className="space-y-4" onSubmit={handleSubmit}>
-              <div className="grid gap-4 md:grid-cols-2">
-                <div className="space-y-2">
-                  <input
-                    id="name"
-                    name="name"
-                    required
-                    value={formState.name}
-                    onChange={handleChange}
-                    placeholder="Full Name"
-                    className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <input
-                    id="company"
-                    name="company"
-                    required
-                    value={formState.company}
-                    onChange={handleChange}
-                    placeholder="Company"
-                    className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
-                  />
-                </div>
-              </div>
-
-              <div className="grid gap-4 md:grid-cols-2">
-                <div className="space-y-2">
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    required
-                    value={formState.email}
-                    onChange={handleChange}
-                    placeholder="Email"
-                    className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <input
-                    id="phone"
-                    name="phone"
-                    required
-                    value={formState.phone}
-                    onChange={handleChange}
-                    placeholder="Phone"
-                    className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
-                  />
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <select
-                  id="projectType"
-                  name="projectType"
-                  value={formState.projectType}
-                  onChange={handleChange}
-                  className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
-                >
-                  <option value="">Project Type</option>
-                  <option value="metro">Metro</option>
-                  <option value="solar">Solar</option>
-                  <option value="data-centre">Data Centre</option>
-                  <option value="industrial">Industrial</option>
-                  <option value="airport">Airport</option>
-                  <option value="residential">Residential</option>
-                  <option value="commercial">Commercial</option>
-                  <option value="hospital">Hospital</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              <div className="space-y-2">
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  rows={4}
-                  value={formState.message}
-                  onChange={handleChange}
-                  placeholder="Describe your scope (site, drawings, timelines)"
-                  className="w-full resize-none rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
-                />
-              </div>
-
-              <div className="pt-2">
-                <Button
-                  type="submit"
-                  variant="primary"
-                  size="lg"
-                  className="w-full"
-                >
-                  Request Proposal
-                </Button>
-              </div>
-
-              {submitted && (
-                <p className="text-center text-sm text-green-600">
-                  Thank you for reaching out. Our team will connect with you
-                  shortly.
-                </p>
-              )}
-            </form>
-          </div>
+          <ProposalForm title="Request Proposal" />
         </div>
       </div>
     </section>

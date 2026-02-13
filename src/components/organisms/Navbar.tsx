@@ -7,8 +7,8 @@ import { Button } from "@/src/components/atoms/Button";
 
 const navItems = [
   { label: "Sectors", href: "#sectors" },
-  { label: "Projects", href: "#about" },
-  { label: "About", href: "#brands" },
+  { label: "Projects", href: "#sectors" },
+  { label: "About", href: "#about" },
   { label: "EHS & Quality", href: "#certificates" },
   { label: "Careers", href: "#careers" },
   { label: "Contact", href: "#contact" },
@@ -50,9 +50,11 @@ export const Navbar = () => {
           transition={{ delay: 0.2 }}
         >
           {/* Button size: w:168 h:41 per Figma specs */}
-          <Button variant="primary" className="w-[168px] h-[41px]">
-            Get a proposal
-          </Button>
+          <Link href="/proposal">
+            <Button variant="primary" className="w-[168px] h-[41px]">
+              Get a proposal
+            </Button>
+          </Link>
         </motion.div>
       </nav>
     </header>
