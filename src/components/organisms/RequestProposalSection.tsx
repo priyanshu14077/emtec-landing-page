@@ -36,7 +36,7 @@ export const RequestProposalSection = () => {
               </svg>
               <div>
                 <p className="text-slate-900">
-                  +91 9098876741 / +91 70426 76296
+                  +91 9096871414
                 </p>
               </div>
             </div>
